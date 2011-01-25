@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="tr" lang="tr">
+<head>
+	<title>canvas</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	
+	<script type="text/javascript" src="canvas.js"></script>
+	<script type="text/javascript" src="inc.js"></script>
+
+	<style>
+	#myCanvas {
+	border:1px solid #dedede;
+	background:#ececec;
+	}
+	</style>
+	
+</head>
+
+<body>
+
+<canvas id="myCanvas"></canvas> 
+<br />
+
+
+<button onclick="Ciz();">çiz</button>
+<script type="text/javascript">
+
+	var tuval, sq1,sq2,sq3,ci,ov1,ov2,li1,li2,tri1,tri2;
+	
+	tuval=new mCanvas();
+	tuval.set({'id':'myCanvas','width':800
+			,'height':500,'left':100,'top':50});
+	function Ciz(){
+	
+	ci=new circle(100,100,50);
+	ci.set({'border':15,'borderColor':'white'
+			,'backColor':'#009E8E','textSize':11});
+	ci.text='elma armut karpuz portakal domates patlıcan salatalık';
+	tuval.append(ci);
+	
+	ci1=new circle(300,100,50);
+	ci1.set({'border':35,'borderColor':'red','backColor':'white'});
+	ci1.text='BÜYÜK UÇAK GEMİ VAPUR TREN';
+	tuval.append(ci1);	
+	
+	ov1=new oval(700,200,150,50);
+	ov1.set({'border':5,'borderColor':'green'
+			,'backColor':'white','textSize':10});
+	ov1.text='elma armut karpuz kiraz portakal';
+	tuval.append(ov1);	
+	
+	ov=new oval(500,100,150,50);
+	ov.set({'border':10,'borderColor':'blue'
+			,'backColor':'#60B9CE','textSize':9});
+	ov.text='OTOMOBİL MOTOR KAMYON BİSİKLET';
+	tuval.append(ov);
+	
+	sq1=new square(350,440,100,100);
+	sq1.set({'border':20,'borderColor':'orange'
+			,'backColor':'green','textSize':11});
+	sq1.text="TREN XXXX YYYY KKK LLLLLLL";
+	tuval.append(sq1);
+	
+	sq2=new square(300,300,100,100);
+	sq2.set({'border':20,'borderColor':'red','backColor':'#FDFF73'
+			,'textSize':12});
+	sq2.text="elma armut karpuz kiraz portakal domates patlıcan salatalık biber";
+	tuval.append(sq2);
+	
+	sq3=new square(100,400,100,100);
+	sq3.set({'border':20,'borderColor':'blue'
+			,'backColor':'white','textSize':11});
+	sq3.text="KKKK AAAA BBBB CCCC DDDD EEEE";
+	tuval.append(sq3);
+	
+	tri1=new triangle(50,50,150,150,50,150,50,50);
+	tri1.set({'border':15,'borderColor':'blue'
+			,'backColor':'red','textSize':10});
+	tri1.text='domates patlıcan salatalık';
+	tuval.append(tri1);
+	
+	tri=new triangle(100,100,200,200,50,200,100,100);
+	tri.set({'border':15,'borderColor':'black'
+			,'backColor':'red','textSize':10});
+	tri.text='elma armut karpuz kiraz portakal domates patlıcan salatalık';
+	tuval.append(tri);
+	
+	ov.append(sq2);
+	ov.append(ci);
+	
+	tri.append(ci);
+	tri.append(sq1);
+	tri.append(ov);
+	tri.append(tri1);
+	
+	ci.append(ov1);
+	ci.append(ci1);
+	
+	sq2.append(sq3);
+	sq1.append(sq2);
+	
+	tuval.draw();
+	}
+	
+
+</script>
+
+</body>
+
+
+</html>
